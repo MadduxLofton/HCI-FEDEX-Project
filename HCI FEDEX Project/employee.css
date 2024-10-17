@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+    border-style: solid;
+}
+
+.logo {
+    text-align: left;
+    font-size: 30px;
+    /*border-style: solid;*/
+    width: 100%;
+
+}
+.header {
+    text-align: center;
+    font-size: 30px;
+    /*border-style: solid;
+    border-color: red;*/
+    width: 100%;
+}
+.hamburger {
+    text-align: right;
+    font-size: 30px;
+    /*border-style: solid;*/
+    width: 100%;
+}
+
+/*
+Code for the Search bar copied from:
+https://www.w3schools.com/howto/howto_css_searchbar.asp
+*/
+  .search-bar input[type=text] {
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+
