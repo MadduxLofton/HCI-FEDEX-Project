@@ -44,7 +44,7 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
 
 button {
     /*margin-top: 8px;*/
-    /*margin-right: 16px;*/
+    margin-right: 16px;
     font-size: 17px;
     width: 40%;
     /*float: right;*/

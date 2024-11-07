@@ -52,7 +52,7 @@
             Upcoming
         </button>
 
-        
+        <!--
         <div class="job-card">
             Job Title | Time | Date | Location <br>
             Description/Requirements/Certifications/etc...<br>
@@ -63,7 +63,28 @@
             More Info
         </button>
         </div>
+        -->
+        <script>
+            function Job(title, time, date, location, description){
+                this.title = title;
+                this.time = time;
+                this.date = date;
+                this.location = location;
+                this.description = description;
+            }
 
+            const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
+            for (let i = 0; i < 3; i++) {
+            document.write(
+                "<div class='job-card'>", job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location, "<br>", 
+                    job_1.description, "<br>",
+                    "<button type='button'> Claim </button>",
+                    "<button type='button'> More Info </button>",
+                    "</div>"
+                );
+            }
+
+        </script>
 
     </div>
      
