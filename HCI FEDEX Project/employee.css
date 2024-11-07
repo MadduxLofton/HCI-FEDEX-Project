@@ -54,19 +54,50 @@ table {
     width: 100%;
 }
 
-.search-section {
-    border-style: dashed;
-    border-color: blue;
-    margin-top: 8px;
-    width: 70%;
+.body-section {
+    width: 100%;
+    border-style: solid;
     overflow: auto;
 }
 
+.search-section {
+    /*border-style: dashed;
+    border-color: blue;*/
+    margin-top: 8px;
+    width: 70%;
+    overflow: auto;
+    float: left;
+}
+
 .job-card {
-    border-style: dashed;
-    border-color: red;
-    /*margin-top: 8px;*/
+    /*border-style: solid;
+    border-color: gray;*/
+    margin-top: 8px;
     width: 99%;
     float: left;
     overflow: auto;
+}
+
+.filter {
+    border-style: solid;
+    border-color: purple;
+    /*margin-top: 8px;*/
+    width: 29%;
+    float: right;
+    overflow: auto;
+}
+
+.dumb-box {
+    border-style: solid;
+    border-color: gray;
+    overflow: auto;
+}
+
+.filter-search-bar input[type=text] {
+    /*margin-top: 8px;*/
+    /*margin-right: 16px;*/
+    text-align: left;
+    font-size: 17px;
+    width: 80%;
+    float: left;
 }

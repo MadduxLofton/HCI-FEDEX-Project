@@ -43,52 +43,84 @@
     </div>
 
 
-    
-    <div class="search-section">
-        <div class="search-bar">
-            <input type="text" placeholder="Search..">
+    <div class="body-section">
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..">
+            </div>
+            <button type="button">
+                Upcoming
+            </button>
+
+            <!--
+            <div class="job-card">
+                Job Title | Time | Date | Location <br>
+                Description/Requirements/Certifications/etc...<br>
+            <button type="button">
+                Claim
+            </button>
+            <button type="button">
+                More Info
+            </button>
+            </div>
+            -->
+            <div class="dumb-box">
+            <script>
+                function Job(title, time, date, location, description){
+                    this.title = title;
+                    this.time = time;
+                    this.date = date;
+                    this.location = location;
+                    this.description = description;
+                }
+
+                const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
+                for (let i = 0; i < 3; i++) {
+                document.write(
+                    "<div class='job-card'>", job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location, "<br>", 
+                        job_1.description, "<br>",
+                        "<button type='button'> Claim </button>",
+                        "<button type='button'> More Info </button>",
+                        "</div>"
+                    );
+                }
+
+            </script>
+            </div>
         </div>
-        <button type="button">
-            Upcoming
-        </button>
+        
+        <div class="filter">
+            <h1>Filter</h1>
+            search filter <br>
+            <div class="filter-search-bar">
+                <input type="text" placeholder="Search Filter">
+            </div> <br><br>
+            Job Type <br>
+            <select name="job" id="job">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            <select>
+            <br><br>
+            Location <br>
+            ---dropdown here--- <br><br>
+            Date <br>
+            ---To--- ---From--- <br><br>
+            Time <br>
+            ---dropdown--- - ---dropdown--- <br><br>
+            Pay Range <br>
+            ---dropdown--- - ---dropdown--- <br><br>
+            Upload Date <br>
+            ---dropdown--- <br><br>
 
-        <!--
-        <div class="job-card">
-            Job Title | Time | Date | Location <br>
-            Description/Requirements/Certifications/etc...<br>
-        <button type="button">
-            Claim
-        </button>
-        <button type="button">
-            More Info
-        </button>
+            ---Clear button--- ---Save button---
+
+
+
+
         </div>
-        -->
-        <script>
-            function Job(title, time, date, location, description){
-                this.title = title;
-                this.time = time;
-                this.date = date;
-                this.location = location;
-                this.description = description;
-            }
-
-            const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
-            for (let i = 0; i < 3; i++) {
-            document.write(
-                "<div class='job-card'>", job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location, "<br>", 
-                    job_1.description, "<br>",
-                    "<button type='button'> Claim </button>",
-                    "<button type='button'> More Info </button>",
-                    "</div>"
-                );
-            }
-
-        </script>
-
     </div>
-     
-
         
    
 </body>
