@@ -48,16 +48,15 @@ button {
     font-size: 17px;
     width: 40%;
     /*float: right;*/
+    border-radius: 5px;
 }
 
-table {
-    width: 100%;
-}
 
 .body-section {
     width: 100%;
     border-style: solid;
     overflow: auto;
+    border-color: orange;
 }
 
 .search-section {
@@ -91,6 +90,8 @@ table {
     border-style: solid;
     border-color: gray;
     overflow: auto;
+    border-radius: 7px;
+    /*width: 70%;*/
 }
 
 .filter-search-bar input[type=text] {
@@ -100,4 +101,13 @@ table {
     font-size: 17px;
     width: 80%;
     float: left;
+}
+
+table {
+    width: 100%;
+    float:left;
+    overflow: auto;
+}
+tr:nth-child(2) {
+    background-color:lightgray;
 }

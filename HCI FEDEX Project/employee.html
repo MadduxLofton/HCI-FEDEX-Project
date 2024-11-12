@@ -75,15 +75,25 @@
                 }
 
                 const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
+
+                document.write("<table>");
                 for (let i = 0; i < 3; i++) {
                 document.write(
-                    "<div class='job-card'>", job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location, "<br>", 
-                        job_1.description, "<br>",
-                        "<button type='button'> Claim </button>",
-                        "<button type='button'> More Info </button>",
-                        "</div>"
+                    "<tr>",
+                        "<td>",
+                            "<div class='job-card'>",
+                                job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location,
+                                "<br>", 
+                                job_1.description,
+                                "<br>",
+                                "<button type='button'> Claim </button>",
+                                "<button type='button'> More Info </button>",
+                            "</div>",
+                        "</td>",
+                    "</tr>"
                     );
                 }
+                document.write("</table>");
 
             </script>
             </div>
@@ -91,30 +101,60 @@
         
         <div class="filter">
             <h1>Filter</h1>
-            search filter <br>
+            Search filter<br>
             <div class="filter-search-bar">
                 <input type="text" placeholder="Search Filter">
-            </div> <br><br>
+            </div>
+            <br>
+            <br>
             Job Type <br>
-            <select name="job" id="job">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select name="job-dropdown" id="job-dropdown">
+                <option value="job-1">Job 1</option>
+                <option value="job-2">Job 2</option>
+                <option value="job-3">Job 3</option>
+                <option value="job-4">Job 4</option>
             <select>
-            <br><br>
+            <br>
+            <br>
             Location <br>
-            ---dropdown here--- <br><br>
+            <select name="location-dropdown" id="location-dropdown">
+                <option value="Starkville">Starkville</option>
+                <option value="Jackson">Jackson</option>
+                <option value="Hattiesburg">Hattiesburg</option>
+                <option value="Oxford">Oxford</option>
+            <select>
+            <br>
+            <br>
             Date <br>
-            ---To--- ---From--- <br><br>
+            <input type="date" id="start-date" name="start-date"> - <input type="date" id="end-date" name="end-date"> 
+            <br>
+            <br>
             Time <br>
-            ---dropdown--- - ---dropdown--- <br><br>
+            <input type="time" id="appt" name="appt"> - <input type="time" id="appt" name="appt">
+            <br>
+            <br>
             Pay Range <br>
-            ---dropdown--- - ---dropdown--- <br><br>
+            <select name="pay-dropdown" id="pay-dropdown">
+                <option value="9$">9$</option>
+                <option value="10$">10$</option>
+                <option value="11$">11$</option>
+                <option value="12$">12$</option>
+            <select>
+            -
+            <select name="pay-dropdown" id="pay-dropdown">
+                <option value="9$">9$</option>
+                <option value="10$">10$</option>
+                <option value="11$">11$</option>
+                <option value="12$">12$</option>
+            <select>
+            <br>
+            <br>
             Upload Date <br>
-            ---dropdown--- <br><br>
+            <input type="date" id="start-date" name="start-date">
+            <br>
+            <br>
 
-            ---Clear button--- ---Save button---
+            <button type='button'> Clear </button> <button type='button'> Save </button>
 
 
 
