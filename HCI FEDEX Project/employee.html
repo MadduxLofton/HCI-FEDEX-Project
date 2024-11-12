@@ -5,31 +5,6 @@
   <link rel="stylesheet" href="employee.css">
 </head>
 <body>
-
-    <!--
-    <table>
-        <tr>
-            <td style="width:33%">
-                <div class="logo">
-                    FedEx
-                </div>
-            </td>
-
-            <td style="width:33%">
-                <div class="header">
-                    Employee Dashboard
-                </div>
-            </td>
-
-            <td style="width:33%">
-                <div class="hamburger">
-                    =
-                </div>
-            </td>
-
-        </tr> 
-    </table>
--->
     <div class="top-bar">
         <div class="logo">
             FedEx
@@ -48,22 +23,10 @@
             <div class="search-bar">
                 <input type="text" placeholder="Search..">
             </div>
-            <button type="button">
+            <button class="button-orange">
                 Upcoming
             </button>
 
-            <!--
-            <div class="job-card">
-                Job Title | Time | Date | Location <br>
-                Description/Requirements/Certifications/etc...<br>
-            <button type="button">
-                Claim
-            </button>
-            <button type="button">
-                More Info
-            </button>
-            </div>
-            -->
             <div class="dumb-box">
             <script>
                 function Job(title, time, date, location, description){
@@ -77,7 +40,7 @@
                 const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
 
                 document.write("<table>");
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < 5; i++) {
                 document.write(
                     "<tr>",
                         "<td>",
@@ -86,8 +49,8 @@
                                 "<br>", 
                                 job_1.description,
                                 "<br>",
-                                "<button type='button'> Claim </button>",
-                                "<button type='button'> More Info </button>",
+                                "<button class='button-purple'> Claim </button>",
+                                "<button class='button-orange'> More Info </button>",
                             "</div>",
                         "</td>",
                     "</tr>"
@@ -154,10 +117,7 @@
             <br>
             <br>
 
-            <button type='button'> Clear </button> <button type='button'> Save </button>
-
-
-
+            <button class='button-gray'> Clear </button> <button class='button-purple'> Save </button>
 
         </div>
     </div>
