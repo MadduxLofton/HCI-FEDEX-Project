@@ -1,0 +1,22 @@
+.gray-background {
+    width: 100%;
+    background: rgba(0,0,0,0.5); /*https://stackoverflow.com/questions/11184117/transparent-css-background-color*/
+    position: absolute;
+
+    /*needed because */
+    right: 0px;
+    top: 0px;
+    
+    /*https://jsfiddle.net/EeAaB/*/
+    min-height: 100%;
+    padding: 0px;
+}
+
+.foreground-box {
+    position: absolute;
+    left: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    top: 50%;
+}

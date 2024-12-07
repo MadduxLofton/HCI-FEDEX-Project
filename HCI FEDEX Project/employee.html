@@ -21,44 +21,14 @@
     <div class="body-section">
         <div class="search-section">
             <div class="search-bar">
-                <input type="text" placeholder="Search..">
+                <input type="text" name="job-search-bar" id="job-search-bar" placeholder="Search..">
             </div>
             <button class="button-orange">
                 Upcoming
             </button>
 
             <div class="dumb-box">
-            <script>
-                function Job(title, time, date, location, description){
-                    this.title = title;
-                    this.time = time;
-                    this.date = date;
-                    this.location = location;
-                    this.description = description;
-                }
-
-                const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
-
-                document.write("<table>");
-                for (let i = 0; i < 5; i++) {
-                document.write(
-                    "<tr>",
-                        "<td>",
-                            "<div class='job-card'>",
-                                job_1.title, " | ", job_1.time, " | ", job_1.date, " | ", job_1.location,
-                                "<br>", 
-                                job_1.description,
-                                "<br>",
-                                "<button class='button-purple'> Claim </button>",
-                                "<button class='button-orange'> More Info </button>",
-                            "</div>",
-                        "</td>",
-                    "</tr>"
-                    );
-                }
-                document.write("</table>");
-
-            </script>
+            <script src="claimed_jobs.js"></script> <!--This writes the job list-->
             </div>
         </div>
         
@@ -66,7 +36,7 @@
             <h1>Filter</h1>
             Search filter<br>
             <div class="filter-search-bar">
-                <input type="text" placeholder="Search Filter">
+                <input type="text" name="filter-search-bar" id="filter-search-bar" placeholder="Search Filter">
             </div>
             <br>
             <br>
@@ -76,7 +46,7 @@
                 <option value="job-2">Job 2</option>
                 <option value="job-3">Job 3</option>
                 <option value="job-4">Job 4</option>
-            <select>
+            </select>
             <br>
             <br>
             Location <br>
@@ -85,7 +55,7 @@
                 <option value="Jackson">Jackson</option>
                 <option value="Hattiesburg">Hattiesburg</option>
                 <option value="Oxford">Oxford</option>
-            <select>
+            </select>
             <br>
             <br>
             Date <br>
@@ -97,19 +67,19 @@
             <br>
             <br>
             Pay Range <br>
-            <select name="pay-dropdown" id="pay-dropdown">
+            <select name="min-pay-dropdown" id="min-pay-dropdown">
                 <option value="9$">9$</option>
                 <option value="10$">10$</option>
                 <option value="11$">11$</option>
                 <option value="12$">12$</option>
-            <select>
+            </select>
             -
-            <select name="pay-dropdown" id="pay-dropdown">
+            <select name="max-pay-dropdown" id="max-pay-dropdown">
                 <option value="9$">9$</option>
                 <option value="10$">10$</option>
                 <option value="11$">11$</option>
                 <option value="12$">12$</option>
-            <select>
+            </select>
             <br>
             <br>
             Upload Date <br>
@@ -119,6 +89,12 @@
 
             <button class='button-gray'> Clear </button> <button class='button-purple'> Save </button>
 
+            <!--
+            <div class="gray-background">
+                <div class="filler-box">Empty Box</div>
+                <div class="foreground-box">This is the figure</div>
+            </div>
+            -->
         </div>
     </div>
         
