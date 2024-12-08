@@ -1,13 +1,19 @@
-function Job(title, time, date, location, description){
+function Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link)
+{
     this.title = title;
-    this.time = time;
     this.date = date;
-    this.location = location;
+    this.job_location = job_location; // location is a reserved word
     this.description = description;
+    this.start_time = start_time;
+    this.end_time = end_time;
+    this.pay = pay;
+    this.skills = skills;
+    this.map_link = map_link;
 }
 
 // I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
-function claim_job() {
+function claim_job()
+{
     let popup_str =
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
@@ -39,17 +45,19 @@ function claim_job() {
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
 
-function unclaimed_job_more_info() {
-    let popup_str =
+function unclaimed_job_more_info(title, job_location, date, start_time, end_time, pay, description, skills)
+{
+    //title, job_location, date, start_time, end_time, pay, description, skills, map_link
+    popup_str = 
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="foreground-box">' +
         '<button class="popup-exit" onclick="delete_popup();">x</button>' +
-        '<h1>Job Title - Location</h1>' +
-        'Date | Start Time - End Time | Pay Rate <br>' +
-        'Simple job description... <br><br>' +
-        'Certifications and skills nessesary/recommended<br>' +
-        'Report to (location) at (time).<br>' +
+        '<h1>' + title + ' - ' + job_location + '</h1>' +
+        date + ' | ' + start_time + ' - ' + end_time + ' | ' + pay + '<br>' +
+        description + '<br><br>' +
+        skills + '<br>' +
+        'Report to ' + job_location + ' at ' + start_time + '.<br>' +
         'Map of Location (link)<br>' +
         '<button>Claim</button> <button>Cancel</button><br>' +
         '</div>' +
@@ -62,7 +70,72 @@ function delete_popup() {
     document.getElementById("popup_div").innerHTML = ""; // This just deletes the popup
 }
 
-const job_1 = new Job("Cook", "7:30-12:30", "7/7/25", "The restarant", "You will cook food");
+function print_job_card(job)
+{
+    //title, job_location, date, start_time, end_time, pay, description, skills, map_link
+    let funct_str =
+    "'" + job.title + "'" +
+    "," +  "'" + job.job_location + "'" +
+    "," +  "'" + job.date + "'" +
+    "," +  "'" + job.start_time + "'" +
+    "," +  "'" + job.end_time + "'" +
+    "," +  "'" + job.pay + "'" +
+    "," +  "'" + job.description + "'" +
+    "," +  "'" + job.skills + "'" +
+    "," +  "'" + job.map_link + "'";
+
+    // There are so many strings within strings this section needs to use ` as a string constructor
+    let tmp_str_1 =
+    `<div class='job-card'>` +
+        job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location +
+        `<br>` + 
+        job.description +
+        `<br>` +
+        `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
+        `<button class="button-orange" onclick="unclaimed_job_more_info(`;
+
+    let tmp_str_2 =
+        `);"> More Info </button>` +
+    `</div>`;
+
+    let tmp_str_3 = tmp_str_1.concat(funct_str, tmp_str_2);
+    dumb_box.insertAdjacentHTML("afterBegin", tmp_str_3); // This places the text at the end of the dumb-box children
+}
+
+function print_job_card_odd(job)
+{
+    //title, job_location, date, start_time, end_time, pay, description, skills, map_link
+    let funct_str =
+    "'" + job.title + "'" +
+    "," +  "'" + job.job_location + "'" +
+    "," +  "'" + job.date + "'" +
+    "," +  "'" + job.start_time + "'" +
+    "," +  "'" + job.end_time + "'" +
+    "," +  "'" + job.pay + "'" +
+    "," +  "'" + job.description + "'" +
+    "," +  "'" + job.skills + "'" +
+    "," +  "'" + job.map_link + "'";
+
+    // There are so many strings within strings this section needs to use ` as a string constructor
+    let tmp_str_1 =
+    `<div class='job-card-odd'>` +
+        job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location +
+        `<br>` + 
+        job.description +
+        `<br>` +
+        `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
+        `<button class="button-orange" onclick="unclaimed_job_more_info(`;
+
+    let tmp_str_2 =
+        `);"> More Info </button>` +
+    `</div>`;
+    
+    let tmp_str_3 = tmp_str_1.concat(funct_str, tmp_str_2);
+    dumb_box.insertAdjacentHTML("afterBegin", tmp_str_3); // This places the text at the end of the dumb-box children
+}
+
+                //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
+const job_1 = new Job("Cook", "7/7/25", "The restarant", "You will cook food", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link");
 
 //document.write("<div class='job-table'>");
 
@@ -70,30 +143,15 @@ const dumb_box = document.getElementById("dumb-box"); // This a reference to the
 let text_1 = "<div class='job-table'>"; // This is the text that it inserts to dumb-box
 dumb_box.insertAdjacentHTML("afterBegin", text_1); // This places the text at the end of the dumb-box children
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++)
+{
     if(i % 2 == 0)
     {
-        let tmp_str = "<div class='job-card'>" +
-            job_1.title + " | " + job_1.time + " | " + job_1.date + " | " + job_1.location +
-            "<br>" + 
-            job_1.description +
-            "<br>" +
-            "<button class='button-purple' onclick='claim_job();'> Claim </button>" +
-            "<button class='button-orange' onclick='unclaimed_job_more_info();'> More Info </button>" +
-        "</div>";
-        dumb_box.insertAdjacentHTML("afterBegin", tmp_str); // This places the text at the end of the dumb-box children
+        print_job_card(job_1);
     }
     else
     {
-        let tmp_str = "<div class='job-card-odd'>" +
-            job_1.title + " | " + job_1.time + " | " + job_1.date + " | " + job_1.location +
-            "<br>" +
-            job_1.description +
-            "<br>" +
-            "<button class='button-purple' onclick='claim_job();'> Claim </button>" +
-            "<button class='button-orange'> More Info </button>" +
-        "</div>";
-        dumb_box.insertAdjacentHTML("afterBegin", tmp_str); // This places the text at the end of the dumb-box children
+        print_job_card_odd(job_1);
     }
 
 }
