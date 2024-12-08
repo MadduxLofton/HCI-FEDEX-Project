@@ -39,6 +39,25 @@ function claim_job() {
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
 
+function unclaimed_job_more_info() {
+    let popup_str =
+    '<div class="gray-background">' +
+        '<div class="filler-box"></div>' +
+        '<div class="foreground-box">' +
+        '<button class="popup-exit" onclick="delete_popup();">x</button>' +
+        '<h1>Job Title - Location</h1>' +
+        'Date | Start Time - End Time | Pay Rate <br>' +
+        'Simple job description... <br><br>' +
+        'Certifications and skills nessesary/recommended<br>' +
+        'Report to (location) at (time).<br>' +
+        'Map of Location (link)<br>' +
+        '<button>Claim</button> <button>Cancel</button><br>' +
+        '</div>' +
+    '</div>';
+    const popup_div = document.getElementById("popup_div");
+    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
 function delete_popup() {
     document.getElementById("popup_div").innerHTML = ""; // This just deletes the popup
 }
@@ -60,7 +79,7 @@ for (let i = 0; i < 5; i++) {
             job_1.description +
             "<br>" +
             "<button class='button-purple' onclick='claim_job();'> Claim </button>" +
-            "<button class='button-orange'> More Info </button>" +
+            "<button class='button-orange' onclick='unclaimed_job_more_info();'> More Info </button>" +
         "</div>";
         dumb_box.insertAdjacentHTML("afterBegin", tmp_str); // This places the text at the end of the dumb-box children
     }
