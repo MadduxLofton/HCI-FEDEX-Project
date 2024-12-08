@@ -18,8 +18,11 @@ function claim_job()
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="foreground-box">' +
-            '<button class="popup-exit" onclick="delete_popup();">x</button>' +
-            '<h1>Job Claim Form</h1>' +
+            '<div class="popup-title">' +
+                'Job Claim Form' +
+                '<button class="popup-exit" onclick="delete_popup();">x</button>' +
+            '</div>' +
+
             'Name <br>' +
             '<input type="text" name="employee_1st_name" id="employee_1st_name" placeholder="First"> <input type="text" name="employee_last_name" id="employee_last_name" placeholder="Last"> <br>' +
             'email phone <br>' +
@@ -37,12 +40,23 @@ function claim_job()
             '</select> <br>' +
             'Certification/Skills <br>' +
             '<input type="text" name="employee_skills" id="employee_skills"> <br>' +
+        
             '<button>User Profile Information</button><br>' +
             '<button>Submit</button>' +
         '</div>' +
     '</div>';
     const popup_div = document.getElementById("popup_div");
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
+function more_info_claim_job() 
+{
+    /*
+    This function exists because when more info button is pressed
+    popup needs to be cleared to prevent odd behavior
+    */ 
+    delete_popup();
+    claim_job();
 }
 
 function unclaimed_job_more_info(title, job_location, date, start_time, end_time, pay, description, skills)
@@ -52,14 +66,24 @@ function unclaimed_job_more_info(title, job_location, date, start_time, end_time
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="foreground-box">' +
-        '<button class="popup-exit" onclick="delete_popup();">x</button>' +
-        '<h1>' + title + ' - ' + job_location + '</h1>' +
-        date + ' | ' + start_time + ' - ' + end_time + ' | ' + pay + '<br>' +
-        description + '<br><br>' +
-        skills + '<br>' +
-        'Report to ' + job_location + ' at ' + start_time + '.<br>' +
-        'Map of Location (link)<br>' +
-        '<button>Claim</button> <button>Cancel</button><br>' +
+        '<div class="popup-title">' + title + ' - ' + job_location + '</div>' +
+        '<div class="popup-date">' +
+            date + 
+        '</div>' +
+        '<div class="popup-time">' +
+            start_time + ' - ' + end_time +
+        '</div>' +
+        '<div class="popup-pay">' +
+            pay +
+        '</div>' +
+        '<div class="popup-text">' +
+            '<br>' +
+            description + '<br><br>' +
+            skills + '<br>' +
+            'Report to ' + job_location + ' at ' + start_time + '.<br>' +
+            'Map of Location (link)<br><br>' +
+        '</div>' +
+        '<button class="button-orange" onclick="more_info_claim_job();"> Claim </button> <button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
         '</div>' +
     '</div>';
     const popup_div = document.getElementById("popup_div");
