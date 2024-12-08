@@ -1,3 +1,7 @@
+* {
+    font-family: Arial;
+}
+
 .top-bar {
     width: 100%;
     border-style: solid;
@@ -93,6 +97,13 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
 }
 .button-gray:hover {
     background-color: green;
+}
+
+.popup-exit {
+    background-color: lightgray;
+    border-radius: 100%;
+    border-style: none;
+    float: right;
 }
 
 .body-section {
@@ -213,11 +224,12 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     /*https://www.w3schools.com/css/css_align.asp*/
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border-style: solid;
+    border-color: black;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .filler-box {
-    min-height: 25%
+    min-height: 100px;
 }

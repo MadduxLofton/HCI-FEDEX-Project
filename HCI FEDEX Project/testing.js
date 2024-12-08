@@ -1,3 +1,4 @@
 function print_hello_world() {
-    document.write("hello world")
+    //alert("hello world");
+    document.write("hello World");
 }

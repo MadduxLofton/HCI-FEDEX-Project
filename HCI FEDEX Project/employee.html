@@ -17,8 +17,11 @@
         </div>
     </div>
 
-
-    <script scr="employee_claim.js"></script> <!--This is functionally an include statement for the employee_claim() function-->
+    <!--
+    For some reason this function doesn't work in this file but does in the other >=(
+    <script scr="employee_claim.js"></script> This is functionally an include statement for the employee_claim() function
+    <button class='button-purple' onclick='claim_job();'> Claim </button>
+    -->
 
     <div class="body-section">
         <div class="search-section">
@@ -29,8 +32,10 @@
                 Upcoming
             </button>
 
-            <div class="dumb-box">
+            <div class="dumb-box" id="dumb-box">
             <script src="claimed_jobs.js"></script> <!--This writes the job list-->
+
+            
             </div>
         </div>
         
@@ -91,15 +96,17 @@
 
             <button class='button-gray'> Clear </button> <button class='button-purple'> Save </button>
 
-            <!--
-            <div class="gray-background">
-                <div class="filler-box">Empty Box</div>
-                <div class="foreground-box">This is the figure</div>
-            </div>
-            -->
+            
         </div>
     </div>
-        
+
+    <!--
+    <div class="gray-background">
+        <div class="filler-box">Empty Box</div>
+        <div class="foreground-box">This is the figure</div>
+    </div>
+    -->
+    <div id="popup_div"></div> <!--This is where the popup is placed-->
    
 </body>
 </html>
