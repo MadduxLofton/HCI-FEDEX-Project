@@ -22,27 +22,32 @@ function claim_job()
                 'Job Claim Form' +
                 '<button class="popup-exit" onclick="delete_popup();">x</button>' +
             '</div>' +
-
             'Name <br>' +
-            '<input type="text" name="employee_1st_name" id="employee_1st_name" placeholder="First"> <input type="text" name="employee_last_name" id="employee_last_name" placeholder="Last"> <br>' +
-            'email phone <br>' +
-            '<input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"> <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"> <br>' +
+            '<input type="text" name="employee_1st_name" id="employee_1st_name" placeholder="First" width="100%">' +
+            '<br>' +
+            '<input type="text" name="employee_last_name" id="employee_last_name" placeholder="Last">' +
+            '<br><br>' +
+            'Email<br>' +
+            '<input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"> <br><br>' +
+            'Phone<br>' +
+            '<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"> <br><br>' +
             'Address <br>' +
             '<input type="text" name="employee_st_address" id="employee_st_address" placeholder="Street Address"> <br>' +
             '<input type="text" name="employee_st_address2" id="employee_st_address2" placeholder="Street Address Line 2">  <br>' +
-            '<input type="text" name="employee_city" id="employee_city" placeholder="City"> <input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
-            '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code">' +
+            '<input type="text" name="employee_city" id="employee_city" placeholder="City"><br>' +
+            '<input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
+            '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code"><br>' +
             '<select name="country-dropdown" id="country-dropdown">' +
                 '<option value="United States">United States</option>' +
                 '<option value="Canada">Canada</option>' +
                 '<option value="Mexico">Mexico</option>' +
                 '<option value="United Kingdom">United Kingdom</option>'+
-            '</select> <br>' +
+            '</select> <br><br>' +
             'Certification/Skills <br>' +
-            '<input type="text" name="employee_skills" id="employee_skills"> <br>' +
+            '<input type="text" name="employee_skills" id="employee_skills"> <br><br>' +
         
-            '<button>User Profile Information</button><br>' +
-            '<button>Submit</button>' +
+            '<button class="use-profile-information-button">Use Profile Information</button><br><br>' +
+            '<button class="claim-job-submit">Submit</button>' +
         '</div>' +
     '</div>';
     const popup_div = document.getElementById("popup_div");
