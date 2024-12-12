@@ -409,3 +409,7 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     border-bottom-color: gray;
     border-bottom-style: solid;
 }
+
+textarea {
+    width: 100%;
+}

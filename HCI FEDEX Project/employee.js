@@ -189,7 +189,56 @@ function profile_popup() {
         'Address: 123 Not A Real Place Dr. <br><br>' +
         '<div class="profile-mini-header">Basic Information</div><br>' +
         'Birthday: Febuary, 29th, 2001<br>' +
-        'Gender: Male' +
+        'Gender: Male<br><br>' +
+        '<button class="button-gray" onclick="edit_profile_popup();"> Edit </button>' + 
+        '</div>' + 
+    '</div>';
+
+    const popup_div = document.getElementById("popup_div");
+    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
+function edit_profile_popup() {
+    delete_popup();
+    popup_str = 
+    '<div class="gray-background">' +
+        '<div class="filler-box"></div>' +
+        '<div class="profile-foreground-box">' +
+        '<button class="popup-exit" onclick="delete_popup();">x</button>' +
+        '<div class="profile-left">' +
+            '<img src="blank-profile-pictureBIG.jpg"> <br><br>' +
+            '<div class="line-below">Skills</div>' +
+            '<textarea id="skills" name="skills" rows="4"></textarea><br><br>' +
+            '<div class="line-below">Certifications</div>'+
+            '<textarea id="certifications" name="certifications" rows="4"></textarea><br><br>' +
+        '</div>' +
+        '<div class="profile-right">' +
+        '<div class="profile-header">' +
+            'John Doe' +
+        '</div>' +
+        'Attendance: 97%<br>' +
+        'Punctuality: 74%<br><br>' +
+        '<div class="line-below"> About </div>' +
+        '<div class="profile-mini-header">Contact Information</div><br>' +
+        'Phone: <input type="tel" id="phone" name="phone"><br>' +
+        'Email: <input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"><br>' +
+        'Address:<br>' +
+        '<input type="text" name="employee_st_address" id="employee_st_address" placeholder="Street Address"> <br>' +
+        '<input type="text" name="employee_st_address2" id="employee_st_address2" placeholder="Street Address Line 2">  <br>' +
+        '<input type="text" name="employee_city" id="employee_city" placeholder="City"><br>' +
+        '<input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
+        '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code"><br>' +
+        '<select name="country-dropdown" id="country-dropdown">' +
+            '<option value="United States">United States</option>' +
+            '<option value="Canada">Canada</option>' +
+            '<option value="Mexico">Mexico</option>' +
+            '<option value="United Kingdom">United Kingdom</option>'+
+        '</select> <br><br>' +
+        '<div class="profile-mini-header">Basic Information</div><br>' +
+        'Birthday: Febuary, 29th, 2001<br>' +
+        'Gender: Male<br><br>' +
+        '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' + 
+        '<button class="button-orange" onclick="delete_popup();"> Save </button>' + 
         '</div>' + 
     '</div>';
 
