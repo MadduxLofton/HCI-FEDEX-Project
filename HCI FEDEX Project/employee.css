@@ -627,3 +627,69 @@ textarea {
     overflow-y: auto;
     box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
+
+/* This is for the employee list*/
+table {
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+    width: 100%;
+    padding: 8px;
+    border-collapse: collapse;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+}
+th {
+    background-color:  rgb(102, 0, 153);
+    color: white;
+}
+tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.foreground-box-employee-list {
+    /*position: relative;*/
+    /*left: 30%;*/
+    border-radius: 5px;
+    background-color: white;
+    /*top: 50%;*/
+
+    overflow: auto;
+    /*box-sizing: border-box;*/
+
+    /*https://www.w3schools.com/css/css_align.asp*/
+    margin: auto;
+    width: 80%;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+    /*text-align: left;*/
+    height: 600px;
+}
+
+.red-round {
+    position: relative;
+    background-color: red;
+    color: red;
+    width: 16px;
+    border-radius: 100%;
+    border-style: none;
+    margin-left: 25px;
+}
+.yellow-round {
+    position: relative;
+    background-color: yellow;
+    color: yellow;
+    width: 16px;
+    border-radius: 100%;
+    border-style: none;
+    margin-left: 25px;
+}
+.green-round {
+    position: relative;
+    background-color: green;
+    color: green;
+    width: 16px;
+    border-radius: 100%;
+    border-style: none;
+    margin-left: 25px;
+}
