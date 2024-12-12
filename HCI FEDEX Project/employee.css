@@ -334,3 +334,78 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     min-height: 100px;
 }
 
+.profile-foreground-box {
+    /*position: relative;*/
+    /*left: 30%;*/
+    border-radius: 5px;
+    background-color: white;
+    /*top: 50%;*/
+
+    overflow: auto;
+    box-sizing: border-box;
+
+    /*https://www.w3schools.com/css/css_align.asp*/
+    margin: auto;
+    width: 70%;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+    /*text-align: left;*/
+}
+
+.profile-header {
+    position: relative;
+    text-align: left;
+    min-width: 100%;
+    font-size: 30px;
+    /*background-color: lightgray;*/
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+
+    padding: 8px;
+
+    margin-left: -8px;
+    margin-right: -8px;
+
+    top: -8px;
+    right: 0px;
+
+    /*
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    */
+}
+
+.profile-mini-header {
+    font-size: 14px;
+}
+
+.profile-left {
+    width: 10%;
+    /*background-color:red;*/
+    float: left;
+}
+.profile-right {
+    width: 85%;
+    /*background-color: blue;*/
+    float: right;
+}
+
+.line-below {
+    position: relative;
+    text-align: left;
+    min-width: 100%;
+    /*background-color: lightgray;*/
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+
+    /*
+    padding: 8px;
+
+    margin-left: -8px;
+    margin-right: -8px;
+*/
+    top: -8px;
+    right: 0px;
+
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+}
