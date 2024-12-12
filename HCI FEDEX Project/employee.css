@@ -215,8 +215,7 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
 .job-card {
     /*border-style: solid;
     border-color: gray;*/
-    margin-top: 8px;
-    padding: 8px;
+    padding: 16px;
     width: 100%;
     float: left;
     overflow: auto;
@@ -226,8 +225,7 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
 .job-card-odd {
     /*border-style: solid;
     border-color: gray;*/
-    margin-top: 8px;
-    padding: 8px;
+    padding: 16px;
     width: 100%;
     float: left;
     overflow: auto;
@@ -449,4 +447,39 @@ textarea {
 
 .job-card-header {
     font-size: 20px;
+    position: relative;
+    text-align: left;
+    min-width: 100%;
+    /*background-color: lightgray;*/
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+
+    /*
+    padding: 8px;
+
+    margin-left: -8px;
+    margin-right: -8px;
+*/
+    top: -8px;
+    right: 0px;
+
+    padding-bottom: 8px;
+    padding-top: 8px;
+
+    border-bottom-color: darkgray;
+    border-bottom-style: solid;
+}
+
+.employee-count-bad {
+    float: right;
+    background-color: red;
+}
+
+.employee-count-mid {
+    float: right;
+    background-color: yellow;
+}
+
+.employee-count-good {
+    float: right;
+    background-color: green;
 }

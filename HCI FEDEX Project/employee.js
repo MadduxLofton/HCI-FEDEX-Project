@@ -1,14 +1,15 @@
-function Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link)
-{
-    this.title = title;
-    this.date = date;
-    this.job_location = job_location; // location is a reserved word
-    this.description = description;
-    this.start_time = start_time;
-    this.end_time = end_time;
-    this.pay = pay;
-    this.skills = skills;
-    this.map_link = map_link;
+class Job {
+    constructor(title, date, job_location, description, start_time, end_time, pay, skills, map_link) {
+        this.title = title;
+        this.date = date;
+        this.job_location = job_location; // location is a reserved word
+        this.description = description;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.pay = pay;
+        this.skills = skills;
+        this.map_link = map_link;
+    }
 }
 
 // I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
@@ -119,7 +120,7 @@ function print_job_card(job)
         job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location +
     `</div>` + 
     job.description +
-    `<br>` +
+    `<br><br>` +
     `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
     `<button class="button-orange" onclick="unclaimed_job_more_info(`;
 
@@ -239,8 +240,6 @@ const job_1 = new Job("Cook", "7/7/25", "The restarant", "You will cook food", "
 
 
 const dumb_box = document.getElementById("dumb-box"); // This a reference to the dumb-box element 
-let text_1 = "<div class='job-table'>"; // This is the text that it inserts to dumb-box
-dumb_box.insertAdjacentHTML("afterBegin", text_1); // This places the text at the end of the dumb-box children
 
 for (let i = 0; i < 5; i++)
 {

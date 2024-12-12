@@ -1,14 +1,17 @@
-function Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link)
-{
-    this.title = title;
-    this.date = date;
-    this.job_location = job_location; // location is a reserved word
-    this.description = description;
-    this.start_time = start_time;
-    this.end_time = end_time;
-    this.pay = pay;
-    this.skills = skills;
-    this.map_link = map_link;
+class Job {
+    constructor(title, date, job_location, description, start_time, end_time, pay, skills, map_link, employee_count, employees_needed) {
+        this.title = title;
+        this.date = date;
+        this.job_location = job_location; // location is a reserved word
+        this.description = description;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.pay = pay;
+        this.skills = skills;
+        this.map_link = map_link;
+        this.employee_count = employee_count;
+        this.employees_needed = employees_needed;
+    }
 }
 
 // I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
@@ -113,15 +116,35 @@ function print_job_card(job)
     "," +  "'" + job.skills + "'" +
     "," +  "'" + job.map_link + "'";
 
+    employee_count = job.employee_count;
+    employees_needed = job.employees_needed;
+
+    if (employee_count < employees_needed / 2)
+    {
+        var box_color = "<div class='employee-count-bad'>";
+    }
+    else if (employee_count < employees_needed)
+    {
+        var box_color = "<div class='employee-count-mid'>";
+    }
+    else
+    {
+        var box_color = "<div class='employee-count-good'>";
+    }
+
     // There are so many strings within strings this section needs to use ` as a string constructor
-    let tmp_str_1 =
-    `<div class='job-card-header'>` +
-        job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location +
-    `</div>` + 
+    let tmp_str_4 =
+    `<div class='job-card-header'>` + job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location;
+
+    let tmp_str_5 = employee_count + `/` + employees_needed + ` Employees</div></div>`;
+
+    let tmp_str_6 = 
     job.description +
-    `<br>` +
+    `<br><br>` +
     `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
     `<button class="button-orange" onclick="unclaimed_job_more_info(`;
+
+    let tmp_str_1 = tmp_str_4.concat(box_color, tmp_str_5, tmp_str_6);
 
     let tmp_str_2 =
         `);"> More Info </button>`;
@@ -234,19 +257,24 @@ function edit_profile_popup() {
 }
 
                 //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
-const job_1 = new Job("Cook", "7/7/25", "The restarant", "You will cook food", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link");
-
+const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
+const job_2 = new Job("Forklift Driver", "1/7/25", "Ramp", "Driving forklift", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 200, 300);
+const job_3 = new Job("Box Mover", "1/8/25", "Station", "Moving Boxes", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 300, 300);
+const job_4 = new Job("Package Mover", "1/8/25", "Ramp", "Moving Packages", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
+const job_5 = new Job("Plane Unloader", "1/9/25", "Hub", "Unloading the plane", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
+let job_array = [job_1, job_2, job_3, job_4, job_5];
 const dumb_box = document.getElementById("dumb-box"); // This a reference to the dumb-box element 
 
-for (let i = 0; i < 5; i++)
+i = 0;
+for (job in job_array)
 {
     if(i % 2 == 0)
     {
-        print_job_card_even(job_1);
+        print_job_card_even(job_array[i]);
     }
     else
     {
-        print_job_card_odd(job_1);
+        print_job_card_odd(job_array[i]);
     }
-
+    i++;
 }
