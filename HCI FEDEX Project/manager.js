@@ -15,41 +15,28 @@ class Job {
 }
 
 // I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
-function claim_job()
+function edit_job()
 {
     let popup_str =
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="foreground-box">' +
-            '<div class="popup-title">' +
-                'Job Claim Form' +
+            '<div class="popup-title-center">' +
+                'Edit Job Post' +
                 '<button class="popup-exit" onclick="delete_popup();">x</button>' +
             '</div>' +
-            'Name <br>' +
-            '<input type="text" name="employee_1st_name" id="employee_1st_name" placeholder="First" width="100%">' +
-            '<br>' +
-            '<input type="text" name="employee_last_name" id="employee_last_name" placeholder="Last">' +
-            '<br><br>' +
-            'Email<br>' +
-            '<input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"> <br><br>' +
-            'Phone<br>' +
-            '<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"> <br><br>' +
-            'Address <br>' +
-            '<input type="text" name="employee_st_address" id="employee_st_address" placeholder="Street Address"> <br>' +
-            '<input type="text" name="employee_st_address2" id="employee_st_address2" placeholder="Street Address Line 2">  <br>' +
-            '<input type="text" name="employee_city" id="employee_city" placeholder="City"><br>' +
-            '<input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
-            '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code"><br>' +
-            '<select name="country-dropdown" id="country-dropdown">' +
-                '<option value="United States">United States</option>' +
-                '<option value="Canada">Canada</option>' +
-                '<option value="Mexico">Mexico</option>' +
-                '<option value="United Kingdom">United Kingdom</option>'+
-            '</select> <br><br>' +
-            'Certification/Skills <br>' +
-            '<input type="text" name="employee_skills" id="employee_skills"> <br><br>' +
-        
-            '<button class="use-profile-information-button" onclick="delete_popup();">Use Profile Information</button><br><br>' +
+            'Job Type <br>' +
+            '<div class="popup-left">' +
+                '<select name="job-type-dropdown" id="job-type-dropdown">' +
+                    '<option value="job-1">Job 1</option>' +
+                    '<option value="job-2">Job 2</option>' +
+                    '<option value="job-3">Job 3</option>' +
+                    '<option value="job-4">Job 4</option>' +
+                '</select>' +
+            '</div>' +
+            '<div class="popup-center">' +
+                'Location' +
+            '</div>' +
             '<button class="claim-job-submit" onclick="delete_popup();">Submit</button>' +
         '</div>' +
     '</div>';
@@ -141,13 +128,16 @@ function print_job_card(job)
     let tmp_str_6 = 
     job.description +
     `<br><br>` +
-    `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
-    `<button class="button-orange" onclick="unclaimed_job_more_info(`;
+    `<div class='left-block'>` +
+        `<button class="button-purple" onclick="edit_job();"> Edit </button>` +
+    `</div>` +
+    `<div class='right-block'>` +
+        `<button class="button-orange" onclick="unclaimed_job_more_info(`;
 
     let tmp_str_1 = tmp_str_4.concat(box_color, tmp_str_5, tmp_str_6);
 
     let tmp_str_2 =
-        `);"> More Info </button>`;
+        `);"> Employees </button></div>`;
 
     let tmp_str_3 = tmp_str_1.concat(funct_str, tmp_str_2);
     //dumb_box.insertAdjacentHTML("beforeEnd", tmp_str_3); // This places the text at the end of the dumb-box children

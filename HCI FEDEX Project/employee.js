@@ -72,24 +72,29 @@ function unclaimed_job_more_info(title, job_location, date, start_time, end_time
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="foreground-box">' +
-        '<div class="popup-title">' + title + ' - ' + job_location + '</div>' +
-        '<div class="popup-date">' +
-            date + 
-        '</div>' +
-        '<div class="popup-time">' +
-            start_time + ' - ' + end_time +
-        '</div>' +
-        '<div class="popup-pay">' +
-            pay +
-        '</div>' +
-        '<div class="popup-text">' +
-            '<br>' +
-            description + '<br><br>' +
-            skills + '<br>' +
-            'Report to ' + job_location + ' at ' + start_time + '.<br>' +
-            'Map of Location (link)<br><br>' +
-        '</div>' +
-        '<button class="button-orange" onclick="more_info_claim_job();"> Claim </button> <button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
+            '<div class="popup-title">' + title + ' - ' + job_location + '</div>' +
+            '<div class="popup-date">' +
+                date + 
+            '</div>' +
+            '<div class="popup-time">' +
+                start_time + ' - ' + end_time +
+            '</div>' +
+            '<div class="popup-pay">' +
+                pay +
+            '</div>' +
+            '<div class="popup-text">' +
+                '<br>' +
+                description + '<br><br>' +
+                skills + '<br>' +
+                'Report to ' + job_location + ' at ' + start_time + '.<br>' +
+                'Map of Location (link)<br><br>' +
+            '</div>' +
+            '<div class="left-block">' +
+                '<button class="button-orange" onclick="more_info_claim_job();"> Claim </button>' +
+            '</div>' +
+            '<div class="right-block">' +
+                '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
+            '</div>' +
         '</div>' +
     '</div>';
     const popup_div = document.getElementById("popup_div");
@@ -121,11 +126,14 @@ function print_job_card(job)
     `</div>` + 
     job.description +
     `<br><br>` +
-    `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
-    `<button class="button-orange" onclick="unclaimed_job_more_info(`;
+    `<div class="left-block">` +
+        `<button class="button-purple" onclick="claim_job();"> Claim </button>` +
+    `</div>` +
+    `<div class="right-block">` +
+        `<button class="button-orange" onclick="unclaimed_job_more_info(`;
 
     let tmp_str_2 =
-        `);"> More Info </button>`;
+        `);"> More Info </button></div>`;
 
     let tmp_str_3 = tmp_str_1.concat(funct_str, tmp_str_2);
     //dumb_box.insertAdjacentHTML("beforeEnd", tmp_str_3); // This places the text at the end of the dumb-box children
