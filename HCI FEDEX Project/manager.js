@@ -236,11 +236,7 @@ function edit_profile_popup() {
                 //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
 const job_1 = new Job("Cook", "7/7/25", "The restarant", "You will cook food", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link");
 
-
-
 const dumb_box = document.getElementById("dumb-box"); // This a reference to the dumb-box element 
-let text_1 = "<div class='job-table'>"; // This is the text that it inserts to dumb-box
-dumb_box.insertAdjacentHTML("afterBegin", text_1); // This places the text at the end of the dumb-box children
 
 for (let i = 0; i < 5; i++)
 {

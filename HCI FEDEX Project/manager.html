@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title> FEDEX Employee View </title>
+  <title> FEDEX Manager View </title>
   <link rel="stylesheet" href="employee.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
             <img src="fedex-logo.png">
         </div>
         <div class="header-text">
-            Employee Dashboard
+            Manager Dashboard
         </div>
         <div class="hamburger">
             <img src="blank-profile-picture.jpg" onclick="profile_popup();">
@@ -29,12 +29,14 @@
             <div class="search-bar">
                 <input type="text" name="job-search-bar" id="job-search-bar" placeholder="Search..">
             </div>
-            <button class="manager-upcoming-button" onclick="window.location.href = 'employee.html';">
-                Job List
+            <button class="manager-upcoming-button"> <!--onclick="window.location.href = 'employee_upcoming.html';"-->
+                Upcoming
             </button>
 
+            <button class="manager-new-button"> +New</button>
+
             <div class="dumb-box" id="dumb-box">
-            <script src="employee_upcoming.js"></script> <!--This writes the job list-->
+            <script src="manager.js"></script> <!--This writes the job list-->
 
             
             </div>
@@ -71,7 +73,7 @@
             <br>
             <br>
             Time <br>
-            <input type="time" id="appt" name="appt"> - <input type="time" id="appt" name="appt">
+            <input type="time" id="start_time" name="start_time"> - <input type="time" id="end_time" name="end_time">
             <br>
             <br>
             Pay Range <br>
