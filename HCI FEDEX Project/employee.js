@@ -46,8 +46,8 @@ function claim_job()
             'Certification/Skills <br>' +
             '<input type="text" name="employee_skills" id="employee_skills"> <br><br>' +
         
-            '<button class="use-profile-information-button">Use Profile Information</button><br><br>' +
-            '<button class="claim-job-submit">Submit</button>' +
+            '<button class="use-profile-information-button" onclick="delete_popup();">Use Profile Information</button><br><br>' +
+            '<button class="claim-job-submit" onclick="delete_popup();">Submit</button>' +
         '</div>' +
     '</div>';
     const popup_div = document.getElementById("popup_div");
