@@ -14,16 +14,40 @@ class Job {
     }
 }
 
-// I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
-function edit_job()
+function delete_job_post(job_title, job_location, job_date)
 {
+    let popup_str =
+    '<div class="gray-background">' +
+        '<div class="filler-box"></div>' +
+        '<div class="foreground-box">' +
+            '<div class="profile-header">Are you sure?</div>' +
+            job_title + ' at ' + job_location + ' on  ' + job_date + ' will be removed from the job listing.<br><br>' +
+            `<div class='left-block'>` +
+                '<button class="button-white" onclick="delete_popup2();"> Cancel </button>' +
+            '</div>' +
+            `<div class='right-block'>` +
+                '<button class="button-black" onclick="delete_popup2();delete_popup();"> Yes </button>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    const popup_div = document.getElementById("popup_div2");
+    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
+// I wanted this function to be put in a different file but it has to be here for some reason. Javascript hurts me
+function edit_job(job_title, job_location, job_date)
+{
+    let function_str = 
+    "'" + job_title + "'" +
+    "," +  "'" + job_location + "'" +
+    "," +  "'" + job_date + "'";
+
     let popup_str =
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="profile-foreground-box">' +
             '<div class="popup-title-center">' +
                 'Edit Job Post' +
-                '<button class="popup-exit" onclick="delete_popup();">x</button>' +
             '</div>' +
             '<div class="popup-left">' +
                 'Job Type <br>' +
@@ -60,11 +84,24 @@ function edit_job()
             '</div>' +
             '<div class="edit-job-description">Description</div>' +
             '<textarea rows="6" name="job-description" id="job-description"></textarea>' +
-            '<button class="claim-job-submit" onclick="delete_popup();">Submit</button>' +
+            '<div class="popup-left">' +
+                '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
+            '</div>' +
+            '<div class="popup-center">' +
+                `<button class="button-orange" onclick="delete_job_post(`;
+                
+    let popup_str2 = 
+                                                    `);">Delete Post</button>` +
+            '</div>' +
+            '<div class="popup-right">' +
+                '<button class="button-purple" onclick="delete_popup();">Save & Publish' +
+            '</div>' +
         '</div>' +
     '</div>';
+
+    let tmp_str = popup_str.concat(function_str, popup_str2)
     const popup_div = document.getElementById("popup_div");
-    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+    popup_div.insertAdjacentHTML("afterBegin", tmp_str);
 }
 
 function more_info_claim_job() 
@@ -111,6 +148,9 @@ function unclaimed_job_more_info(title, job_location, date, start_time, end_time
 function delete_popup() {
     document.getElementById("popup_div").innerHTML = ""; // This just deletes the popup
 }
+function delete_popup2() {
+    document.getElementById("popup_div2").innerHTML = ""; // This just deletes the popup
+}
 
 function print_job_card(job)
 {
@@ -148,16 +188,24 @@ function print_job_card(job)
 
     let tmp_str_5 = employee_count + `/` + employees_needed + ` Employees</div>`;
 
+    let function_str_2 = 
+    "'" + job.title + "'" +
+    "," +  "'" + job.job_location + "'" +
+    "," +  "'" + job.date + "'";
+
     let tmp_str_6 = 
     job.description +
     `<br><br>` +
     `<div class='left-block'>` +
-        `<button class="button-purple" onclick="edit_job();"> Edit </button>` +
+        `<button class="button-purple" onclick="edit_job(`;
+    
+    let I_hate_javascript_and_html_string = 
+                                        `);"> Edit </button>` +
     `</div>` +
     `<div class='right-block'>` +
         `<button class="button-orange" onclick="unclaimed_job_more_info(`;
     //    let tmp_str_1 = tmp_str_4.concat(box_color, tmp_str_5, tmp_str_6);
-    let tmp_str_1 = box_color.concat( tmp_str_5, tmp_str_4, tmp_str_6);
+    let tmp_str_1 = box_color.concat( tmp_str_5, tmp_str_4, tmp_str_6, function_str_2, I_hate_javascript_and_html_string,); // This line is peak
 
     let tmp_str_2 =
         `);"> Employees </button></div>`;
