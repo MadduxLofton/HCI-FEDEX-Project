@@ -59,6 +59,18 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     float: left;
 }
 
+.full-width input[type=text] {
+    /*margin-top: 8px;*/
+    /*margin-right: 16px;*/
+    width: 90%;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+    margin: 4px;
+    padding: 4px;
+}
+
+
 .button-purple {
     /*margin-top: 8px;
     margin-right: 16px;*/
@@ -395,12 +407,8 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     width: 80%;
     float: left;
 }
-.job-claim-text-box_1 {
-    width: 40%;
-
-    margin-left: 5%;
-    margin-right: 5%;
-    
+.job-claim-form-text-section {
+    width: 100%;
     float: left;
 }
 
@@ -705,3 +713,17 @@ tr:nth-child(odd) {
     border-bottom-style: solid;
     padding: 8px;
 }
+
+.job-claim-left-block {
+
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.job-claim-right-block {
+
+    width: 50%;
+    float: right;
+    text-align: left;
+}
+
