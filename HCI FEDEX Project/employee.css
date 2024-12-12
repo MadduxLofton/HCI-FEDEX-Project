@@ -696,3 +696,12 @@ tr:nth-child(odd) {
     margin-left: 25px;
     float: left;
 }
+
+.notification-text-section {
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
+    border-color: gray;
+    border-bottom-style: solid;
+    padding: 8px;
+}

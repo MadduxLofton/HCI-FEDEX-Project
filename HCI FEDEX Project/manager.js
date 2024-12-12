@@ -397,88 +397,83 @@ function print_job_card_odd(job)
     dumb_box.insertAdjacentHTML("beforeEnd", tmp_str_here); // This places the text at the end of the dumb-box children
 }
 
-function profile_popup() {
+function notifications() {
     popup_str = 
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
-        '<div class="profile-foreground-box">' +
-        '<button class="popup-exit" onclick="delete_popup();">x</button>' +
-        '<div class="profile-left">' +
-            '<img src="blank-profile-pictureBIG.jpg"> <br><br>' +
-            '<div class="line-below">Skills</div>' +
-            'Packaging<br>Scanning<br>Trucking<br><br><br>' +
-            '<div class="line-below">Certifications</div>'+
-            'Forklift<br> CDL' +
-        '</div>' +
-        '<div class="profile-right">' +
-        '<div class="profile-header">' +
-            'John Doe' +
-        '</div>' +
-        'Attendance: 97%<br>' +
-        'Punctuality: 74%<br><br>' +
-        '<div class="line-below"> About </div>' +
-        '<div class="profile-mini-header">Contact Information</div><br>' +
-        'Phone: 555-555-0155<br>' +
-        'Email: john.doe@example.com<br>' +
-        'Address: 123 Not A Real Place Dr. <br><br>' +
-        '<div class="profile-mini-header">Basic Information</div><br>' +
-        'Birthday: Febuary, 29th, 2001<br>' +
-        'Gender: Male<br><br>' +
-        '<button class="button-gray" onclick="edit_profile_popup();"> Edit </button>' + 
-        '</div>' + 
+        '<div class="foreground-box">' +
+            '<div class="popup-title-center">' +
+                'Notifications' +
+                '<button class="popup-exit" onclick="delete_popup();">x</button>' +
+            '</div>' +
+            '<div class="notification-text-section">' +
+                '<div class="red-round">o</div>' +
+                '<div class="profile-right">' +
+                    'Upcoming: Package Unloader at 7:30am-5:00pm on January 7th has too few employees (100/300).' +
+                '</div>' +
+            '</div>' +
     '</div>';
 
     const popup_div = document.getElementById("popup_div");
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
 
-function edit_profile_popup() {
-    delete_popup();
-    popup_str = 
+function create_new_job() {
+    let popup_str =
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
         '<div class="profile-foreground-box">' +
-        '<button class="popup-exit" onclick="delete_popup();">x</button>' +
-        '<div class="profile-left">' +
-            '<img src="blank-profile-pictureBIG.jpg"> <br><br>' +
-            '<div class="line-below">Skills</div>' +
-            '<textarea id="skills" name="skills" rows="4"></textarea><br><br>' +
-            '<div class="line-below">Certifications</div>'+
-            '<textarea id="certifications" name="certifications" rows="4"></textarea><br><br>' +
+        '<div class="popup-title">Create Job Post</div>' +
+            '<div class="popup-left">' +
+                'Job Type <br>' +
+                '<select name="job-type-dropdown" id="job-type-dropdown">' +
+                    '<option value="job-1">Job 1</option>' +
+                    '<option value="job-2">Job 2</option>' +
+                    '<option value="job-3">Job 3</option>' +
+                    '<option value="job-4">Job 4</option>' +
+                '</select>' +
+                '<br><br>Time <br>' +
+                '<input type="time" id="start_time" name="start_time"> - <input type="time" id="end_time" name="end_time"></input>' +
+            '</div>' +
+            '<div class="popup-center">' +
+                'Location<br>' +
+                '<select name="location-dropdown-2" id="location-dropdown-2">' +
+                    '<option value="Starkville">Starkville</option>' +
+                    '<option value="Jackson">Jackson</option>' +
+                    '<option value="Hattiesburg">Hattiesburg</option>' +
+                    '<option value="Oxford">Oxford</option>' +
+                '</select>' +
+                '<br><br>Pay Rate<br>' +
+                '<select name="pay-dropdown" id="pay-dropdown">' +
+                    '<option value="9$">9$</option>' +
+                    '<option value="10$">10$</option>' +
+                    '<option value="11$">11$</option>' +
+                    '<option value="12$">12$</option>' +
+                '</select>' +
+            '</div>' +
+            '<div class="popup-right">' +
+                'Date <br>' +
+                '<input type="date" id="start-date" name="start-date">' +
+                '<br><br>Employee Count <br>' +
+                '<input type="text" name="employee-count" id="employee-count">' +
+            '</div>' +
+            '<div class="edit-job-description">Description</div>' +
+            '<textarea rows="6" name="job-description" id="job-description"></textarea>' +
+            `<div class='popup-left'>` +
+                '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
+            '</div>' +
+            `<div class='popup-center'>` +
+                '<button class="button-orange" onclick="delete_popup();">Save Draft</button>' +
+            '</div>' +
+            `<div class='popup-right'>` +
+                '<button class="button-purple" onclick="delete_popup();">Publish</button>' +
+            '</div>' +
         '</div>' +
-        '<div class="profile-right">' +
-        '<div class="profile-header">' +
-            'John Doe' +
-        '</div>' +
-        'Attendance: 97%<br>' +
-        'Punctuality: 74%<br><br>' +
-        '<div class="line-below"> About </div>' +
-        '<div class="profile-mini-header">Contact Information</div><br>' +
-        'Phone: <input type="tel" id="phone" name="phone"><br>' +
-        'Email: <input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"><br>' +
-        'Address:<br>' +
-        '<input type="text" name="employee_st_address" id="employee_st_address" placeholder="Street Address"> <br>' +
-        '<input type="text" name="employee_st_address2" id="employee_st_address2" placeholder="Street Address Line 2">  <br>' +
-        '<input type="text" name="employee_city" id="employee_city" placeholder="City"><br>' +
-        '<input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
-        '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code"><br>' +
-        '<select name="country-dropdown" id="country-dropdown">' +
-            '<option value="United States">United States</option>' +
-            '<option value="Canada">Canada</option>' +
-            '<option value="Mexico">Mexico</option>' +
-            '<option value="United Kingdom">United Kingdom</option>'+
-        '</select> <br><br>' +
-        '<div class="profile-mini-header">Basic Information</div><br>' +
-        'Birthday: Febuary, 29th, 2001<br>' +
-        'Gender: Male<br><br>' +
-        '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' + 
-        '<button class="button-orange" onclick="delete_popup();"> Save </button>' + 
-        '</div>' + 
     '</div>';
-
     const popup_div = document.getElementById("popup_div");
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
+
 
                 //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
 const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link", 100, 300);

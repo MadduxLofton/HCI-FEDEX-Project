@@ -480,6 +480,62 @@ function edit_profile_popup() {
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
 
+function create_new_job() {
+    let popup_str =
+    '<div class="gray-background">' +
+        '<div class="filler-box"></div>' +
+        '<div class="profile-foreground-box">' +
+        '<div class="popup-title">Create Job Post</div>' +
+            '<div class="popup-left">' +
+                'Job Type <br>' +
+                '<select name="job-type-dropdown" id="job-type-dropdown">' +
+                    '<option value="job-1">Job 1</option>' +
+                    '<option value="job-2">Job 2</option>' +
+                    '<option value="job-3">Job 3</option>' +
+                    '<option value="job-4">Job 4</option>' +
+                '</select>' +
+                '<br><br>Time <br>' +
+                '<input type="time" id="start_time" name="start_time"> - <input type="time" id="end_time" name="end_time"></input>' +
+            '</div>' +
+            '<div class="popup-center">' +
+                'Location<br>' +
+                '<select name="location-dropdown-2" id="location-dropdown-2">' +
+                    '<option value="Starkville">Starkville</option>' +
+                    '<option value="Jackson">Jackson</option>' +
+                    '<option value="Hattiesburg">Hattiesburg</option>' +
+                    '<option value="Oxford">Oxford</option>' +
+                '</select>' +
+                '<br><br>Pay Rate<br>' +
+                '<select name="pay-dropdown" id="pay-dropdown">' +
+                    '<option value="9$">9$</option>' +
+                    '<option value="10$">10$</option>' +
+                    '<option value="11$">11$</option>' +
+                    '<option value="12$">12$</option>' +
+                '</select>' +
+            '</div>' +
+            '<div class="popup-right">' +
+                'Date <br>' +
+                '<input type="date" id="start-date" name="start-date">' +
+                '<br><br>Employee Count <br>' +
+                '<input type="text" name="employee-count" id="employee-count">' +
+            '</div>' +
+            '<div class="edit-job-description">Description</div>' +
+            '<textarea rows="6" name="job-description" id="job-description"></textarea>' +
+            `<div class='popup-left'>` +
+                '<button class="button-gray" onclick="delete_popup();"> Cancel </button>' +
+            '</div>' +
+            `<div class='popup-center'>` +
+                '<button class="button-orange" onclick="delete_popup();">Save Draft</button>' +
+            '</div>' +
+            `<div class='popup-right'>` +
+                '<button class="button-purple" onclick="delete_popup();">Publish</button>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    const popup_div = document.getElementById("popup_div");
+    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
                 //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
 const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
 const job_2 = new Job("Forklift Driver", "1/7/25", "Ramp", "Driving forklift", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 200, 300);
