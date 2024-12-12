@@ -674,6 +674,7 @@ tr:nth-child(odd) {
     border-radius: 100%;
     border-style: none;
     margin-left: 25px;
+    float: left;
 }
 .yellow-round {
     position: relative;
@@ -683,6 +684,7 @@ tr:nth-child(odd) {
     border-radius: 100%;
     border-style: none;
     margin-left: 25px;
+    float: left;
 }
 .green-round {
     position: relative;
@@ -692,4 +694,5 @@ tr:nth-child(odd) {
     border-radius: 100%;
     border-style: none;
     margin-left: 25px;
+    float: left;
 }

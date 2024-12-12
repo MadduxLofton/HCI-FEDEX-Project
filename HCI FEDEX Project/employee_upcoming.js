@@ -185,7 +185,8 @@ function profile_popup() {
         'Address: 123 Not A Real Place Dr. <br><br>' +
         '<div class="profile-mini-header">Basic Information</div><br>' +
         'Birthday: Febuary, 29th, 2001<br>' +
-        'Gender: Male' +
+        'Gender: Male<br><br>' +
+        '<button class="button-gray" onclick="edit_profile_popup();"> Edit </button>' + 
         '</div>' + 
     '</div>';
 
@@ -193,21 +194,76 @@ function profile_popup() {
     popup_div.insertAdjacentHTML("afterBegin", popup_str);
 }
 
-                //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
-const job_1 = new Job("Cook", "7/7/25", "The restarant", "You will cook food", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link");
+function edit_profile_popup() {
+    delete_popup();
+    popup_str = 
+    '<div class="gray-background">' +
+        '<div class="filler-box"></div>' +
+        '<div class="profile-foreground-box">' +
+            '<button class="popup-exit" onclick="delete_popup();">x</button>' +
+            '<div class="profile-left">' +
+                '<img src="blank-profile-pictureBIG.jpg"> <br><br>' +
+                '<div class="line-below">Skills</div>' +
+                '<textarea id="skills" name="skills" rows="4"></textarea><br><br>' +
+                '<div class="line-below">Certifications</div>'+
+                '<textarea id="certifications" name="certifications" rows="4"></textarea><br><br>' +
+            '</div>' +
+            '<div class="profile-right">' +
+                '<div class="profile-header">' +
+                    'John Doe' +
+                '</div>' +
+                'Attendance: 97%<br>' +
+                'Punctuality: 74%<br><br>' +
+                '<div class="line-below"> About </div>' +
+                '<div class="profile-mini-header">Contact Information</div><br>' +
+                'Phone: <input type="tel" id="phone" name="phone"><br>' +
+                'Email: <input type="email" name=employee_email" id="employee_email placeholder="@gmail.com"><br>' +
+                'Address:<br>' +
+                '<input type="text" name="employee_st_address" id="employee_st_address" placeholder="Street Address"> <br>' +
+                '<input type="text" name="employee_st_address2" id="employee_st_address2" placeholder="Street Address Line 2">  <br>' +
+                '<input type="text" name="employee_city" id="employee_city" placeholder="City"><br>' +
+                '<input type="text" name="employee_region" id="employee_region" placeholder="Region"> <br>' +
+                '<input type="text" name="employee_zip" id="employee_zip" placeholder="zip code"><br>' +
+                '<select name="country-dropdown" id="country-dropdown">' +
+                    '<option value="United States">United States</option>' +
+                    '<option value="Canada">Canada</option>' +
+                    '<option value="Mexico">Mexico</option>' +
+                    '<option value="United Kingdom">United Kingdom</option>'+
+                '</select> <br><br>' +
+                '<div class="profile-mini-header">Basic Information</div><br>' +
+                'Birthday: Febuary, 29th, 2001<br>' +
+                'Gender: Male<br><br>' +
+                '<div class="left-block"><button class="button-gray" onclick="delete_popup();profile_popup()"> Cancel </button></div>' + 
+                '<div class="right-block"><button class="button-orange" onclick="delete_popup();"> Save </button></div>' + 
+            '</div>' +
+        '</div>' + 
+    '</div>';
+
+    const popup_div = document.getElementById("popup_div");
+    popup_div.insertAdjacentHTML("afterBegin", popup_str);
+}
+
+//Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
+const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link");
+const job_2 = new Job("Forklift Driver", "1/7/25", "Ramp", "Driving forklift", "7:30am", "5:00pm", "15$/hr", "Must be forklift certified", "map_link");
+const job_3 = new Job("Box Mover", "1/8/25", "Station", "Moving Boxes", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link");
+const job_4 = new Job("Package Mover", "1/8/25", "Ramp", "Moving Packages", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link");
+const job_5 = new Job("Plane Unloader", "1/9/25", "Hub", "Unloading the plane", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link");
+let job_array = [job_1, job_2, job_3, job_4, job_5];
 
 
 const dumb_box = document.getElementById("dumb-box"); // This a reference to the dumb-box element 
 
-for (let i = 0; i < 3; i++)
+for (let i = 0; i < 5; i++)
 {
     if(i % 2 == 0)
     {
-        print_job_card_even(job_1);
+        print_job_card_even(job_array[i]);
     }
     else
     {
-        print_job_card_odd(job_1);
+        print_job_card_odd(job_array[i]);
     }
-
+    if (i == 2) {break;}
 }
+                

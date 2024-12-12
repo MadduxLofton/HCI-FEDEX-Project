@@ -155,22 +155,22 @@ function remove_employee(employee) {
 
 function employee_info()
 {
-    let employee_1 = new Employee("Chester Bennington", "Forklift", 48, 83);
-    let employee_2 = new Employee("Mike Shinoda", "CDL", 53, 19);
-    let employee_3 = new Employee("Brad Delson", "ASE, CDL", 92, 100);
-    let employee_4 = new Employee("Joe Hahn", "Forklift, CDL", 55, 25);
-    let employee_5 = new Employee("Dave Farrell", "-", 64, 58);
-    let employee_6 = new Employee("Emily Armstrong", "CDL", 86, 77);
-    let employee_7 = new Employee("Colin Brittain", "Forklift", 41, 97);
-    let employee_8 = new Employee("Rob Bourdon", "ASE", 23, 81);
-    let employee_9 = new Employee("Serj Tankian", "Forklift", 10, 16);
-    let employee_10 = new Employee("Daron Malakian", "CDL", 28, 61);
-    let employee_11 = new Employee("Shavo Odadjan", "ASE, CDL", 73, 44);
-    let employee_12 = new Employee("John Dolmayan", "Forklift, CDL", 31, 70);
-    let employee_13 = new Employee("Jacoby Saddix", "-", 61, 30);
-    let employee_14 = new Employee("Jerry Horton", "CDL", 28, 96);
-    let employee_15 = new Employee("Dave Buckner", "Forklift", 61, 74);
-    let employee_16 = new Employee("Will James", "ASE", 92, 15);
+    let employee_1 = new Employee("Chester Bennington", "Has em", 48, 83);
+    let employee_2 = new Employee("Mike Shinoda", "Has em", 53, 19);
+    let employee_3 = new Employee("Brad Delson", "Has em", 92, 100);
+    let employee_4 = new Employee("Joe Hahn", "Has em", 55, 25);
+    let employee_5 = new Employee("Dave Farrell", "Has em", 64, 58);
+    let employee_6 = new Employee("Emily Armstrong", "Has em", 86, 77);
+    let employee_7 = new Employee("Colin Brittain", "Has em", 41, 97);
+    let employee_8 = new Employee("Rob Bourdon", "Has em", 23, 81);
+    let employee_9 = new Employee("Serj Tankian", "Has em", 10, 16);
+    let employee_10 = new Employee("Daron Malakian", "Has em", 28, 61);
+    let employee_11 = new Employee("Shavo Odadjan", "Has em", 73, 44);
+    let employee_12 = new Employee("John Dolmayan", "Has em", 31, 70);
+    let employee_13 = new Employee("Jacoby Saddix", "Has em", 61, 30);
+    let employee_14 = new Employee("Jerry Horton", "Has em", 28, 96);
+    let employee_15 = new Employee("Dave Buckner", "Has em", 61, 74);
+    let employee_16 = new Employee("Will James", "Has em", 92, 15);
 
     //title, job_location, date, start_time, end_time, pay, description, skills, map_link
     popup_str = 
@@ -481,11 +481,11 @@ function edit_profile_popup() {
 }
 
                 //Job(title, date, job_location, description, start_time, end_time, pay, skills, map_link) 
-const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link", 100, 300);
-const job_2 = new Job("Forklift Driver", "1/7/25", "Ramp", "Driving forklift", "7:30am", "5:00pm", "15$/hr", "Must be forklift certified", "map_link", 200, 300);
-const job_3 = new Job("Box Mover", "1/8/25", "Station", "Moving Boxes", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link", 300, 300);
-const job_4 = new Job("Package Mover", "1/8/25", "Ramp", "Moving Packages", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link", 100, 300);
-const job_5 = new Job("Plane Unloader", "1/9/25", "Hub", "Unloading the plane", "7:30am", "5:00pm", "15$/hr", "No addition skills needed", "map_link", 100, 300);
+const job_1 = new Job("Package Unloader", "1/7/25", "Station", "Unloading Packages", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
+const job_2 = new Job("Forklift Driver", "1/7/25", "Ramp", "Driving forklift", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 200, 300);
+const job_3 = new Job("Box Mover", "1/8/25", "Station", "Moving Boxes", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 300, 300);
+const job_4 = new Job("Package Mover", "1/8/25", "Ramp", "Moving Packages", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
+const job_5 = new Job("Plane Unloader", "1/9/25", "Hub", "Unloading the plane", "7:30am", "5:00pm", "15$/hr", "you need skills I guess", "map_link", 100, 300);
 let job_array = [job_1, job_2, job_3, job_4, job_5];
 const dumb_box = document.getElementById("dumb-box"); // This a reference to the dumb-box element 
 
@@ -501,4 +501,5 @@ for (job in job_array)
         print_job_card_odd(job_array[i]);
     }
     i++;
+    if (i== 2) {break;}
 }
