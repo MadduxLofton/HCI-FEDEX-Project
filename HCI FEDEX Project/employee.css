@@ -273,7 +273,8 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     width: 100%;
     /*border-style: solid;
     border-color: orange;*/
-    overflow: auto;
+    overflow-x: visible;
+    overflow-y: auto;
 }
 
 .search-section {
@@ -281,7 +282,8 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     border-color: blue;*/
     margin-top: 8px;
     width: 70%;
-    overflow: auto;
+    overflow-x: visible;
+    overflow-y: auto;
     float: left;
 }
 
@@ -291,7 +293,8 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     padding: 16px;
     width: 100%;
     float: left;
-    overflow: auto;
+    overflow-x: visible;
+    overflow-y: auto;
     box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
 
@@ -301,7 +304,8 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     padding: 16px;
     width: 100%;
     float: left;
-    overflow: auto;
+    overflow-x: visible;
+    overflow-y: auto;
     background-color: lightgray;
     box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
@@ -340,7 +344,9 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
 .dumb-box {
     border-style: solid;
     border-color: gray;
-    overflow: auto;
+    overflow-x: visible;
+    overflow-y: auto;
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
     border-radius: 7px;
     margin-top: 8px;
     /*width: 70%;*/
@@ -361,13 +367,6 @@ https://www.w3schools.com/howto/howto_css_searchbar.asp
     margin-right: 5%;
     
     float: left;
-}
-
-
-.job-table {
-    width: 100%;
-    float:left;
-    overflow: auto;
 }
 
 .gray-background {
@@ -523,16 +522,9 @@ textarea {
     font-size: 20px;
     position: relative;
     text-align: left;
-    min-width: 100%;
-    /*background-color: lightgray;*/
+    width: 100%;
     box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 
-    /*
-    padding: 8px;
-
-    margin-left: -8px;
-    margin-right: -8px;
-*/
     top: -8px;
     right: 0px;
 
@@ -541,21 +533,33 @@ textarea {
 
     border-bottom-color: darkgray;
     border-bottom-style: solid;
+    overflow-x: visible;
+    overflow-y: visible;
 }
 
 .employee-count-bad {
+    position: relative;
     float: right;
     background-color: red;
+    padding-right: 8px;
+    margin-right: -16px;
+    /*box-sizing: content-box; https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
 
 .employee-count-mid {
     float: right;
     background-color: yellow;
+    padding-right: 8px;
+    margin-right: -16px;
+    /*box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
 
 .employee-count-good {
     float: right;
     background-color: green;
+    padding-right: 8px;
+    margin-right: -16px;
+    /*box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }
 
 .left-block {
@@ -570,4 +574,18 @@ textarea {
     margin: auto;
     float: right;
     text-align: center;
+}
+
+.edit-job-description {
+    width: 100%;
+    text-align: left;
+    float: left;
+    padding-top: 8px;
+}
+
+.job-sub-header {
+    float: left;
+    overflow-x: visible;
+    overflow-y: auto;
+    box-sizing: border-box; /*https://www.w3schools.com/css/css3_box-sizing.asp*/
 }

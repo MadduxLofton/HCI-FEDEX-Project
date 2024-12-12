@@ -20,23 +20,46 @@ function edit_job()
     let popup_str =
     '<div class="gray-background">' +
         '<div class="filler-box"></div>' +
-        '<div class="foreground-box">' +
+        '<div class="profile-foreground-box">' +
             '<div class="popup-title-center">' +
                 'Edit Job Post' +
                 '<button class="popup-exit" onclick="delete_popup();">x</button>' +
             '</div>' +
-            'Job Type <br>' +
             '<div class="popup-left">' +
+                'Job Type <br>' +
                 '<select name="job-type-dropdown" id="job-type-dropdown">' +
                     '<option value="job-1">Job 1</option>' +
                     '<option value="job-2">Job 2</option>' +
                     '<option value="job-3">Job 3</option>' +
                     '<option value="job-4">Job 4</option>' +
                 '</select>' +
+                '<br><br>Time <br>' +
+                '<input type="time" id="start_time" name="start_time"> - <input type="time" id="end_time" name="end_time"></input>' +
             '</div>' +
             '<div class="popup-center">' +
-                'Location' +
+                'Location<br>' +
+                '<select name="location-dropdown-2" id="location-dropdown-2">' +
+                    '<option value="Starkville">Starkville</option>' +
+                    '<option value="Jackson">Jackson</option>' +
+                    '<option value="Hattiesburg">Hattiesburg</option>' +
+                    '<option value="Oxford">Oxford</option>' +
+                '</select>' +
+                '<br><br>Pay Rate<br>' +
+                '<select name="pay-dropdown" id="pay-dropdown">' +
+                    '<option value="9$">9$</option>' +
+                    '<option value="10$">10$</option>' +
+                    '<option value="11$">11$</option>' +
+                    '<option value="12$">12$</option>' +
+                '</select>' +
             '</div>' +
+            '<div class="popup-right">' +
+                'Date <br>' +
+                '<input type="date" id="start-date" name="start-date">' +
+                '<br><br>Employee Count <br>' +
+                '<input type="text" name="employee-count" id="employee-count">' +
+            '</div>' +
+            '<div class="edit-job-description">Description</div>' +
+            '<textarea rows="6" name="job-description" id="job-description"></textarea>' +
             '<button class="claim-job-submit" onclick="delete_popup();">Submit</button>' +
         '</div>' +
     '</div>';
@@ -108,22 +131,22 @@ function print_job_card(job)
 
     if (employee_count < employees_needed / 2)
     {
-        var box_color = "<div class='employee-count-bad'>";
+        var box_color = "<div class='job-card-header'><div class='employee-count-bad'>";
     }
     else if (employee_count < employees_needed)
     {
-        var box_color = "<div class='employee-count-mid'>";
+        var box_color = "<div class='job-card-header'><div class='employee-count-mid'>";
     }
     else
     {
-        var box_color = "<div class='employee-count-good'>";
+        var box_color = "<div class='job-card-header'><div class='employee-count-good'>";
     }
 
     // There are so many strings within strings this section needs to use ` as a string constructor
     let tmp_str_4 =
-    `<div class='job-card-header'>` + job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location;
+    job.title + ` | ` + job.start_time + ` - ` + job.end_time + ` | ` + job.date + ` | ` + job.job_location + `</div>`;
 
-    let tmp_str_5 = employee_count + `/` + employees_needed + ` Employees</div></div>`;
+    let tmp_str_5 = employee_count + `/` + employees_needed + ` Employees</div>`;
 
     let tmp_str_6 = 
     job.description +
@@ -133,8 +156,8 @@ function print_job_card(job)
     `</div>` +
     `<div class='right-block'>` +
         `<button class="button-orange" onclick="unclaimed_job_more_info(`;
-
-    let tmp_str_1 = tmp_str_4.concat(box_color, tmp_str_5, tmp_str_6);
+    //    let tmp_str_1 = tmp_str_4.concat(box_color, tmp_str_5, tmp_str_6);
+    let tmp_str_1 = box_color.concat( tmp_str_5, tmp_str_4, tmp_str_6);
 
     let tmp_str_2 =
         `);"> Employees </button></div>`;
